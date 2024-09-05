@@ -1,0 +1,391 @@
+================================================================================
+
+Download https://mega.nz/#!SYcBRR5S!KLBFTWvQ3cFK6CBiKQmVqwq_atl54wBEI3LsXGcc3Ng
+HUAWEI_Driver_5.05.02.00
+
+Extract the ZIP to somewhere
+
+Open the properties window of the device that has the following ID: USB\VID_413C&PID_81B6&REV_0006&MI_03.
+Note the “MI_03” at the end, in case of a different ID, MI_03 always corresponds to the AT command COM port.
+
+Then click “Update Driver”
+
+Click “Browse my computer for driver software”
+
+Select “Show All Devices” and click “Next”
+
+Click “Have Disk”
+
+Enter the path you extracted the drivers into: “D:\DRV\Driver\Driver\X64“.
+Use “D:\DRV\Driver\Driver\X86” if your Windows is 32 bit
+
+Click “OK”. You will see the following window. In the left list, select “Huawei Incorporated“,
+then in the right list, select “HUAWEI Mobile Broadband – Modem” and click “Next”
+
+You will see the following warning from Windows. Just click “Yes”
+
+The driver will be installed
+
+Click “Close” and check the device in the Device Manager
+
+Check the assigned COM port number in the “Modem” tab
+
+
+================================================================================
+
+Enter commands to modem COM port (use PuTTY, etc)
+
+AT
+ATI
+AT!ENTERCND="A710"
+AT!USBPID=9071,9070
+AT!USBVID=1199
+AT!USBPRODUCT="EM7455"
+AT!PRIID="9904802","001.001","Generic"
+AT!RESET
+
+================================================================================
+
+Wait for modem to reset, then unplug and plug back in
+
+Download Generic firmware from
+https://source.sierrawireless.com/resources/airprime/minicard/74xx/em_mc74xx-approved-fw-packages/
+
+Install....
+
+FDT version: 1.0.1806.0
+Awaiting adapter ...
+Setting images preference ...
+Resetting ...
+Awaiting download port ...
+Downloading images ...
+Writing image -
+Flashing image \
+Writing image |
+Flashing image /
+Awaiting adapter ...
+Checking update status ...
+Enabling selective suspend ...
+Firmware image download succeeded.
+Final Firmware update succeeded.
+
+Preexisting images information:
+        Current:
+                Firmware:
+                        ImageId: 002.027_000
+                        BuildId: 02.24.05.06_ATT
+                Configuration:
+                        ImageId: 002.027_000
+                        BuildId: 02.24.05.06_ATT
+Final images information:
+        Current:
+                Firmware:
+                        ImageId: 002.082_000
+                        BuildId: 02.38.00.00_GENERIC
+                Configuration:
+                        ImageId: 002.082_000
+                        BuildId: 02.38.00.00_GENERIC
+
+OEM PRI: 9904802 001.001 Generic
+
+IMEI: 354479088236524
+
+Total time elapsed: 151688 ms.
+
+Time to switch to boot mode: 16765 ms.
+
+Images downloaded:
+        Image ID: ?_?
+        Build ID: 02.38.00.00_?
+                write time: 4672 ms
+                additional flash time: 14500 ms
+        Image ID: 002.082_000
+        Build ID: 02.38.00.00_GENERIC
+                write time: 15 ms
+                additional flash time: 63 ms
+
+Time to reset to application mode: 114812 ms.
+
+Press Enter to continue ...
+
+================================================================================
+
+AT
+
+OK
+
+ATI
+
+Manufacturer: Sierra Wireless, Incorporated
+Model: EM7455B
+Revision: SWI9X30C_02.38.00.00 rE3F3E55C03AE94 jenkins 2022/01/13 05:16:00
+MEID: 35447908823652
+IMEI: 354479088236524
+IMEI SV: 22
+FSN: LF829402460210
++GCAP: +CGSM
+
+
+OK
+
+================================================================================
+
+OK
+at!openlock?
+
+1660D6A3E7F9B2A7
+
+OK
+
+````` python sierrakeygen.py -l 1660D6A3E7F9B2A7 -d MDM9x30
+````` AT!OPENLOCK="B6D55BC06CF47BD3"
+
+at!openlock="B6D55BC06CF47BD3"
+
+OK
+
+at!nvimeiunlock
+
+OK
+
+at!band=?
+
+Index, Name,                        GW Band Mask     L Band Mask      TDS Band M                                      ask
+00, All bands                     0002000007C00000 00000100130818DF 000000000000                                      0000
+01, Europe 3G                     0002000000400000 0000000000000000 000000000000                                      0000
+02, North America 3G              0000000004800000 0000000000000000 000000000000                                      0000
+06, Europe                        0002000000400000 00000000000800C5 000000000000                                      0000
+07, North America                 0000000004800000 000000000300185A 000000000000                                      0000
+08, WCDMA ALL                     0002000007C00000 0000000000000000 000000000000                                      0000
+09, LTE ALL                       0000000000000000 00000100130818DF 000000000000                                      0000
+
+                                                   0000010000000000 - B41
+                                                   0000000010000000 - B29
+                                                   0000000002000000 - B26
+                                                   0000000001000000 - B25
+                                                   0000000000080000 - B20
+                                                   0000000000001000 - B13
+                                                   0000000000000800 - B12
+                                                   0000000000000080 - B8
+                                                   0000000000000040 - B7
+                                                   0000000000000010 - B5
+                                                   0000000000000008 - B4
+                                                   0000000000000004 - B3
+                                                   000000000000000em2 - B2
+                                                   0000000000000001 - B1
+                                  0002000000000000 - B8  (900)
+                                  0000000004000000 - B5  (850)
+                                  0000000002000000 - B4 (1700)
+                                  0000000001000000 - B3 (1700)
+                                  0000000000800000 - B2 (1900)
+                                  0000000000400000 - B1 (2100)
+
+OK
+
+at!band=00
+
+OK
+
+at!selrat=06
+
+OK
+
+at!GSTATUS?
+
+!GSTATUS:
+Current Time:  1780             Temperature: 24
+Reset Counter: 3                Mode:        ONLINE
+System mode:   LTE              PS state:    Not attached
+LTE band:      B4               LTE bw:      10 MHz
+LTE Rx chan:   2200             LTE Tx chan: 4294967295
+LTE CA state:  NOT ASSIGNED
+EMM state:     Deregistered     Limited Service
+RRC state:     RRC Idle
+IMS reg state: No Srv
+
+PCC RxM RSSI:  -73              RSRP (dBm):  -99
+PCC RxD RSSI:  -73              RSRP (dBm):  -100
+Tx Power:      --               TAC:         5507 (21767)
+RSRQ (dB):     -8.8             Cell ID:     0BFBFE17 (201063959)
+SINR (dB):     15.2
+
+
+OK
+
+at!IMPREF="GENERIC"
+
+OK
+
+at!image=1
+
+TYPE SLOT STATUS LRU FAILURES UNIQUE_ID   BUILD_ID
+FW   1    GOOD   1   0 0      ?_?         02.24.03.00_?
+FW   2    GOOD   2   0 0      ?_?         02.24.05.06_?
+FW   3    GOOD   3   0 0      ?_?         02.38.00.00_?
+FW   4    EMPTY  0   0 0
+Max FW images: 4
+Active FW image is at slot 3
+
+TYPE SLOT STATUS LRU FAILURES UNIQUE_ID   BUILD_ID
+PRI  FF   GOOD   0   0 0      002.027_000 02.24.05.06_ATT
+PRI  FF   GOOD   0   0 0      002.082_000 02.38.00.00_GENERIC
+Max PRI images: 50
+
+
+OK
+
+at!usbcomp?
+
+Config Index: 1
+Config Type:  1 (Generic)
+Interface bitmask: 0000100D (diag,nmea,modem,mbim)
+
+OK
+
+at+cgdcont=?
+
++CGDCONT: (1-24),"IP",,,(0-2),(0-4),(0-1),(0-1)
++CGDCONT: (1-24),"PPP",,,(0-2),(0-4),(0-1),(0-1)
++CGDCONT: (1-24),"IPV6",,,(0-2),(0-4),(0-1),(0-1)
++CGDCONT: (1-24),"IPV4V6",,,(0-2),(0-4),(0-1),(0-1)
+
+OK
+
+at!gstatus?
+
+!GSTATUS:
+Current Time:  2719             Temperature: 26
+Reset Counter: 1                Mode:        ONLINE
+System mode:   LTE              PS state:    Attached
+LTE band:      B2               LTE bw:      20 MHz
+LTE Rx chan:   700              LTE Tx chan: 18700
+LTE CA state:  NOT ASSIGNED
+EMM state:     Registered       Normal Service
+RRC state:     RRC Idle
+IMS reg state: No Srv
+
+PCC RxM RSSI:  -67              RSRP (dBm):  -103
+PCC RxD RSSI:  -65              RSRP (dBm):  -99
+Tx Power:      --               TAC:         5507 (21767)
+RSRQ (dB):     -14.3            Cell ID:     0BFBFE09 (201063945)
+SINR (dB):      1.4
+
+
+OK
+
+AT+CPIN?
+
++CPIN: READY
+
+OK
+
+AT+CCID?
+
++CCID: 89852243101000473521
+
+
+OK
+
+AT+CIMI
+
+454030227073544
+
+OK
+
+AT!UIMS?
+
+!UIMS: 0
+
+OK
+
+AT+CFUN?
+
++CFUN: 1
+
+OK
+
+AT!PCINFO?
+
+State: Online
+LPM voters - Temp:0, Volt:0, User:0, W_DISABLE:0, IMSWITCH:0, BIOS:0, LWM2M:0, OMADM:0, FOTA:0
+LPM persistence - None
+
+OK
+
+AT+COPS=?
+
++COPS:
+(2,"AT&T","AT&T","310410",7),
+(1,"T-Mobile","T-Mobile","310260",7),
+(1,"311 490","311 490","311490",7),
+(1,"313 100","313 100","313100",7),
+(1,"Verizon","Verizon","311480",7),
+,
+(0,1,2,3,4),(0,1,2)
+
+OK
+
+ati3
+
+Manufacturer: Sierra Wireless, Incorporated
+Model: EM7455B
+Revision: SWI9X30C_02.38.00.00 rE3F3E55C03AE94 jenkins 2022/01/13 05:16:00
+MEID: 35447908823652
+IMEI: 354479088236524
+IMEI SV: 22
+FSN: LF829402460210
++GCAP: +CGSM
+
+
+OK
+
+AT!CUSTOM="GPSSEL",1
+
+1 = shared / AUX ant
+0 = dedicated
+Also, depending on your antenna being active or passive, take a look at AT+WANT.
+
+OK
+
+AT!CUSTOM?
+
+!CUSTOM:
+             GPSENABLE          0x04
+             GPSSEL             0x01
+             IPV6ENABLE         0x01
+             SIMLPM             0x01
+             USBSERIALENABLE    0x01
+             SINGLEAPNSWITCH    0x01
+
+
+OK
+
+at!CUSTOM="GPSENABLE",1
+
+OK
+
+at!CUSTOM?
+
+!CUSTOM:
+             GPSENABLE          0x01
+             GPSSEL             0x01
+             IPV6ENABLE         0x01
+             SIMLPM             0x01
+             USBSERIALENABLE    0x01
+             SINGLEAPNSWITCH    0x01
+
+
+OK
+
+at+crsm=176,28539,0,0,12
+
++CRSM: 144,0,"130301FFFFFFFFFFFFFFFFFF"
+
+OK
+
+at+crsm=214,28539,0,0,12,"FFFFFFFFFFFFFFFFFFFFFFFF"
+
++CRSM: 144,0,""
+
+OK
+
