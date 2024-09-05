@@ -1,0 +1,26 @@
+#!/bin/sh
+### share eth0, then write APN conf and connect, then setup wwan0
+
+# Set eth0 addr to what OPNsense is expecting
+ip link set eth0 down
+ip add addr 10.10.2.1/24 dev eth0
+ip link set eth0 up
+
+# Forward ipv4 traffic
+echo 1 > /proc/sys/net/ipv4/ip_forward
+grep -qxF 'net.ipv4.ip_forward=0' /etc/sysctl.conf && sed -e "s;\(net.ipv4.ip_forward=\)\(.*\)$;\11;g" -i /etc/sysctl.conf
+grep -qxF 'net.ipv4.ip_forward=1' /etc/sysctl.conf || echo 'net.ipv4.ip_forward=1' >> /etc/sysctl.conf
+
+# Set APN
+cat > /etc/mbim-network.conf << EOF
+APN=mobile.three.com.hk
+APN_USER=
+APN_PASS=
+APN_AUTH=
+PROXY=yes
+EOF
+
+# Setup IP of wwan0 interface
+ip link set wwan0 up
+mbim-network /dev/cdc-wdm0 start
+/home/mbim-set-ip /dev/cdc-wdm0 wwan0
